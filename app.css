@@ -1,7 +1,5 @@
 .canvas{
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    
     border: 1px solid black;
     height: 500px;
 }
@@ -13,4 +11,8 @@
 .next{
     /* position: relative; */
     margin-left: 100px;
+}
+#arr{
+    width: 300px;
+    height: 30px;
 }
