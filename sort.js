@@ -2,37 +2,54 @@ let canvas= document.getElementsByClassName("canvas");
 // console.log(canvas);
 
 
-// ------------------------------bubble sort-----------------------------------------
-let big=document.createElement("div");
-big.style.backgroundColor="blue";
-big.style.width='500px';
-big.style.height='100px';
+// ------------------------------bubble sort----------------------------------------
+class bigBox {
+    
+    constructor(x,y,w,h,color){
+     this.x=x;
+     this.y=y;
+     this.w=w;
+     this.h=h;
+     this.color=color;
+     this.element
+    }
+    create(){
+        let big=document.createElement("div");
+        this.element=big;
+big.style.backgroundColor=`${this.color}`;
+big.style.width=`${this.w}px`;
+big.style.height=`${this.h}px`;
 big.style.position="absolute";
-big.style.top="200px";
-big.style.left="300px"
-
-
-
+big.style.top=`${this.y}px`;
+big.style.left=`${this.x}px`
 document.body.children[0].appendChild(big);
+    }
+    get(){
+        return this.element;
+    }
 
-let small= document.createElement("div");
+}
 
-small.style.backgroundColor="pink";
-small.style.height="80px";
-small.style.width="50px";
-small.style.position="absolute";
-small.style.top="200px";
-small.style.left="300px";
+class smallBox extends bigBox{
+    constructor(x,y,w,h,color){
+        super(x,y,w,h,color);
+    }
+}
 
-document.body.children[0].appendChild(small);
+let box1= new bigBox(300,200,500,100,'blue');
+box1.create();
+let small1= new smallBox(310,210,50,80,"pink");
+small1.create();
 
-let btn= document.createElement("button");
-btn.innerHTML="button";
-document.body.children[0].appendChild(btn);
-small.style.transition = "left 1s ease,top 1s ease";
-btn.addEventListener("click",()=>{
- // Transition property for left, duration: 1s, easing: ease
-small.style.left = parseInt(small.style.left) + 50 + "px";
-small.style.top=parseInt(small.style.top)+10+"px";
+
+
+let btn= document.getElementsByClassName("prev");
+console.log(btn);
+// btn.innerHTML="button";
+// document.body.children[0].appendChild(btn);
+small1.get().style.transition = "left 1s ease";
+btn[0].addEventListener("click",()=>{
+
+small1.get().style.left = parseInt(small1.get().style.left) + 50 + "px";
+
 })
-

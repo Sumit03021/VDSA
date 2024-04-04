@@ -5,3 +5,12 @@
     border: 1px solid black;
     height: 500px;
 }
+.prev{
+    /* position: relative; */
+    margin-top: 250px;
+    margin-left: 50px;
+}
+.next{
+    /* position: relative; */
+    margin-left: 100px;
+}
