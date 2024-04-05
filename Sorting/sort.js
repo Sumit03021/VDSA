@@ -49,42 +49,40 @@ class smallBox extends bigBox{
       this.ans=true;
     }
     moveLeft(item,x){
-        item.style.transition = "left 1.5s ease";
+        item.style.transition = "left 1s ease";
         setTimeout(() => {
             item.style.left = `${parseInt(item.style.left)-60}px`; 
         }, 0);
     }
     moveRight(item,x){
-        item.style.transition = "left 1.5s ease";
+        item.style.transition = "left 1s ease";
         setTimeout(() => {
             item.style.left = `${parseInt(item.style.left)+60}px`; 
         }, 0);
     }
     moveUp(item,y){
-        item.style.transition = "top 1.5s ease";
+        item.style.transition = "top 1s ease";
         setTimeout(() => {
             item.style.top = `${parseInt(item.style.top)-100}px`; 
         }, 0);
       
     }
     moveDown(item,y){
-        item.style.transition = "top 1.5s ease";
+        item.style.transition = "top 1s ease";
         setTimeout(() => {
             item.style.top = `${parseInt(item.style.top)+100}px`; 
         }, 0);
     }
     swap(item1,item2){
-        item1.style.transition = "left 1.5s ease";
-        item2.style.transition = "left 1.5s ease";
-    
+        item1.style.transition = "left 1s ease";
+        item2.style.transition = "left 1s ease";
         setTimeout(() => {
- 
             let left1 = parseInt(item1.style.left);
             let left2 = parseInt(item2.style.left);
 
             item1.style.left = `${left2}px`; 
             item2.style.left = `${left1}px`; 
-        }, 10);     
+        }, 1000);  
         
     }
     get(){
@@ -133,31 +131,31 @@ let small1= new smallBox(315,210,50,80,"pink");
 
 
 
-let btn= document.getElementsByClassName("prev");
+let btn= document.getElementsByClassName("sort");
 // small1.get().style.transition = "left 1s ease";
 btn[0].addEventListener("click",()=>{
 let arr= small1.get();
-
- bubbleSort();
+bubbleSort(arr);
 })
 
 
-//----------------------------------bubble sort algorithem---------------------
-function bubbleSort(){
-  let arr= small1.get();
+//----------------------------------bubble sort algorithemic function---------------------
+let nextbtn= document.getElementsByClassName("next")
+function bubbleSort(arr){
   for(let i=0;i<arr.length;i++){
       for(let j=0;j<arr.length-i-1;j++){
         let item1= parseInt(arr[j].innerHTML);
         let item2=parseInt(arr[j+1].innerHTML);
         if(item1>item2){
-            small1.swap(arr[j],arr[j+1]);
+           small1.swap(arr[j],arr[j+1]);
             let temp=arr[j];
                 arr[j]=arr[j+1];
-                arr[j+1]=temp;
-                
-            
+                arr[j+1]=temp; 
+       
+           
         }
       }
   }
   console.log(arr);
 }
+//----------------------------------------------------------------------------------------
