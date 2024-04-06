@@ -135,19 +135,21 @@ let btn= document.getElementsByClassName("sort");
 // small1.get().style.transition = "left 1s ease";
 btn[0].addEventListener("click",()=>{
 let arr= small1.get();
-bubbleSort(arr);
+bubbleSort(myArr);
 })
 
 
 //----------------------------------bubble sort algorithemic function---------------------
 
 function bubbleSort(arr){
+    console.log(arr);
+    console.log("sort is pressed")
     let arrItem1=[];
     let arrItem2=[];
   for(let i=0;i<arr.length;i++){
       for(let j=0;j<arr.length-i-1;j++){
-        let item1= parseInt(arr[j].innerHTML);
-        let item2=parseInt(arr[j+1].innerHTML);
+        let item1= arr[j];
+        let item2=arr[j+1];
         if(item1>item2){
         //    small1.swap(arr[j],arr[j+1]);
         arrItem1.push(j);
@@ -165,10 +167,31 @@ function bubbleSort(arr){
 //----------------------------------------------------------------------------------------
 let nextbtn= document.getElementsByClassName("next");
 let i=0
-nextbtn[0].addEventListener("click",()=>{
-     let item1=JSON.parse(window.sessionStorage.getItem("item1"));
-     let item2=JSON.parse(window.sessionStorage.getItem("item2"));
-     let arr= small1.get();
-     small1.swap(arr[item1[i]],arr[item2[i]]);
-     i++;
-})
+let item1=JSON.parse(window.sessionStorage.getItem("item1"));
+    let item2=JSON.parse(window.sessionStorage.getItem("item2"));
+    let arr= small1.get();
+    // if(i<arr.length){
+
+        nextbtn[0].addEventListener("click",()=>{
+            console.log(item1);
+            console.log(item2);
+            
+            console.log(arr)
+            
+            console.log(item1[i],item2[i]);
+            console.log(arr[item1[i]],arr[item2[i]]);
+            small1.swap(arr[item1[i]],arr[item2[i]]);
+            let temp=arr[item1[i]];
+            arr[item1[i]]=arr[item2[i]];
+            arr[item2[i]]=temp;
+            if(i==item1.length){
+                alert("finally sorted")
+            }
+            i++;
+            
+        })
+        
+    // }
+
+
+    // 80 -7 -6 66 27 31 100 55 3
