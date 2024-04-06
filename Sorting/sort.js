@@ -140,22 +140,35 @@ bubbleSort(arr);
 
 
 //----------------------------------bubble sort algorithemic function---------------------
-let nextbtn= document.getElementsByClassName("next")
+
 function bubbleSort(arr){
+    let arrItem1=[];
+    let arrItem2=[];
   for(let i=0;i<arr.length;i++){
       for(let j=0;j<arr.length-i-1;j++){
         let item1= parseInt(arr[j].innerHTML);
         let item2=parseInt(arr[j+1].innerHTML);
         if(item1>item2){
-           small1.swap(arr[j],arr[j+1]);
+        //    small1.swap(arr[j],arr[j+1]);
+        arrItem1.push(j);
+        arrItem2.push(j+1);
             let temp=arr[j];
                 arr[j]=arr[j+1];
-                arr[j+1]=temp; 
-       
-           
+                arr[j+1]=temp;   
         }
       }
   }
-  console.log(arr);
+  window.sessionStorage.setItem("item1",JSON.stringify(arrItem1));
+  window.sessionStorage.setItem("item2",JSON.stringify(arrItem2))
+//   console.log(arr);
 }
 //----------------------------------------------------------------------------------------
+let nextbtn= document.getElementsByClassName("next");
+let i=0
+nextbtn[0].addEventListener("click",()=>{
+     let item1=JSON.parse(window.sessionStorage.getItem("item1"));
+     let item2=JSON.parse(window.sessionStorage.getItem("item2"));
+     let arr= small1.get();
+     small1.swap(arr[item1[i]],arr[item2[i]]);
+     i++;
+})
