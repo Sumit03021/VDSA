@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADSA</title>
     <link rel="stylesheet" href="app.css">
 </head>
+
 <body>
-    <div class="canvas">
-        
-        <button class="next">NEXT</button>
-        <button class="prev">PREV</button>
+    <nav></nav>
+    <div class="mainContent">
+        <div class="sidebar">
+      Hello world sorting!
+        </div>
+        <div class="content">
+            <div class="content-input">
+                <label for="arr">Array</label>
+                <textarea name="" id="arr" cols="70" rows="3"
+                    placeholder="Enter the Array of length 8"></textarea>
+                <button class="done">DONE</button>
+            </div>
+            <div class="canvas">
+                <button class="next">NEXT</button>
+                <button class="prev">PREV</button>
+                <button class="sort">Start</button>
+            </div>
+        </div>
     </div>
-    <br>
-    <label for="arr">Array</label>
-    <textarea  name="" id="arr" cols="70" rows="2" placeholder="type your array of length 8 seperated by single space"></textarea>
-    <button class="done">DONE</button>
 </body>
-<Script src="sort.js"></Script>
+<Script src="Sorting/sort1.js"></Script>
+
 </html>

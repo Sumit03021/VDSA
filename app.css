@@ -1,18 +1,69 @@
-.canvas{
-    
-    border: 1px solid black;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+nav{
+    height: 80px;
+    width: 100vw;
+}
+.mainContent{
     height: 500px;
+    width: 100vw;
+    display: flex;
+}
+.sidebar{
+    height: 500px;
+    width: 39%;
+    border-right: 1px solid black;
+    padding: 16px;
+}
+.content{
+    height: 500px;
+    width: 60%;
+    padding: 16px;
+}
+.content-input{
+    height: 80px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-input label{
+    padding-right: 10px;
+}
+.content-input textarea{
+    height: 40px;
+    width: 300px;
+    text-align: center;
+    padding: 4px;
+}
+button{
+    padding: 6px;
+    margin-left: 10px;
+}
+.canvas{
+    height: 80%;
+    width: 100%;
+    position: relative;
+    border: 1px solid black;
 }
 .prev{
-    /* position: relative; */
-    margin-top: 250px;
-    margin-left: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: 40%;
 }
 .next{
-    /* position: relative; */
-    margin-left: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 48%;
 }
-#arr{
-    width: 300px;
-    height: 30px;
+.sort{
+    position: absolute;
+    bottom: 10px;
+    left: 56%;
 }
