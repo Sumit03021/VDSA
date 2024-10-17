@@ -62,8 +62,10 @@ button{
     bottom: 10px;
     left: 48%;
 }
+#arr{
+    width: 300px;
+    height: 30px;
+}
 .sort{
-    position: absolute;
-    bottom: 10px;
-    left: 56%;
+    margin-left: -109px;
 }
